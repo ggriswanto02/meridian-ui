@@ -16,12 +16,18 @@ export function MobileNavigation({
   useEffect(() => {
     if (!open) return;
 
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") setOpen(false);
     };
 
     window.addEventListener("keydown", onKeyDown);
-    return () => window.removeEventListener("keydown", onKeyDown);
+    return () => {
+      window.removeEventListener("keydown", onKeyDown);
+      document.body.style.overflow = previousOverflow;
+    };
   }, [open]);
 
   return (
@@ -53,7 +59,7 @@ export function MobileNavigation({
 
           <div
             id="mobile-navigation"
-            className="absolute inset-y-0 left-0 flex w-72 max-w-[85vw] flex-col bg-surface px-4 py-5 shadow-xl"
+            className="absolute inset-y-0 left-0 flex w-72 max-w-[85vw] flex-col overflow-y-auto overscroll-contain bg-surface px-4 py-5 shadow-xl"
           >
             <div className="flex items-center justify-between px-2 pb-6">
               <p className="text-sm font-semibold text-ink">{siteConfig.name}</p>

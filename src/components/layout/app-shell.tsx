@@ -23,7 +23,7 @@ export function AppShell({
 
       <Sidebar navigation={navigation} />
 
-      <div className="flex min-h-screen flex-col">
+      <div className="flex min-h-screen min-w-0 flex-col">
         <Topbar user={user} navigation={navigation} />
         <main id="main-content" className="flex-1 p-4 sm:p-6 lg:p-8">
           {children}

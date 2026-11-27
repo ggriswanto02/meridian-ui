@@ -9,7 +9,7 @@ export function Sidebar({
   navigation: readonly NavigationItem[];
 }) {
   return (
-    <aside className="hidden w-64 shrink-0 flex-col border-r border-line bg-surface px-4 py-5 lg:flex">
+    <aside className="sticky top-0 hidden h-screen w-64 shrink-0 flex-col overflow-y-auto overscroll-contain border-r border-line bg-surface px-4 py-5 lg:flex">
       <div className="flex items-center gap-2.5 px-2 pb-6">
         <span className="flex size-9 items-center justify-center rounded-md bg-primary text-surface">
           <ShieldCheck aria-hidden="true" className="size-5" />
