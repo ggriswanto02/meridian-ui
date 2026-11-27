@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+/* Design token dari FE Guideline §6.3 (light palette). */
+@theme {
+  --color-primary: #245c4f;
+  --color-primary-hover: #1c493f;
+  --color-background: #f7f8f7;
+  --color-surface: #ffffff;
+  --color-ink: #202824;
+  --color-muted: #66716b;
+  --color-line: #e4e9e5;
+  --color-success: #23845b;
+  --color-warning: #b7791f;
+  --color-danger: #c2413b;
+  --color-info: #3574a5;
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-ink);
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
